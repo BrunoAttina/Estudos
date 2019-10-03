@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ScrollTopOffSet</title>
+
+	<style type="text/css">
+		#um {
+		  background-color: #ddd;
+		  height: 1000px
+		}
+		#dois {
+		  background-color: #eee;
+		  height: 500px
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id='um'>
+	  div1
+	</div>
+	<div id='dois'>
+	  div2
+	</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// armazena o scrolltop do elemento que deseja aguardar
+	var scrollTopoffset = $('#dois').offset().top - $(window).height();
+
+	$(window).scroll(function() {
+	  if ($(window).scrollTop() > scrollTopoffset) {
+	  // rolagem chegou ao elemento
+	  	verificaTopo = 1;
+	    alert('#dois apareceu!');
+	  }
+	});
+</script>
+</html>
